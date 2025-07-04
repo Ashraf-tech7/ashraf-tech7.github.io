@@ -1,50 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>AshTech | Creative Web Builder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
+      font-family: 'Orbitron', sans-serif;
+      background-image: url('https://i.imgur.com/mYXy7Ul.jpg'); /* futuristic tech + space */
+      background-size: cover;
+      background-attachment: fixed;
       color: #fff;
       text-align: center;
-      padding: 40px;
+      padding: 40px 20px;
     }
-    h1 {
-      font-size: 3em;
-      color: #00ffcc;
+    .logo {
+      font-size: 3.5em;
+      color: #ff003c;
+      text-shadow: 0 0 20px #ff003c, 0 0 30px #ff003c;
+      animation: pulse 2s infinite;
+      margin-bottom: 20px;
     }
-    h2 {
-      color: #ffdd57;
-    }
-    p {
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.6;
-      font-size: 1.1em;
+    @keyframes pulse {
+      0% { text-shadow: 0 0 5px #ff003c, 0 0 10px #ff003c; }
+      50% { text-shadow: 0 0 20px #ff003c, 0 0 30px #ff003c; }
+      100% { text-shadow: 0 0 5px #ff003c, 0 0 10px #ff003c; }
     }
     .section {
       margin: 60px 0;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 12px;
+      animation: fadeIn 1.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      color: #ffdd57;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto;
     }
     a {
-      color: #00ffcc;
+      color: #00ffee;
       text-decoration: none;
     }
     .button {
       display: inline-block;
       margin-top: 20px;
-      padding: 10px 20px;
-      background: #00ffcc;
+      padding: 10px 25px;
+      background: #00ffee;
       color: #000;
-      border-radius: 5px;
+      border-radius: 8px;
       font-weight: bold;
+      transition: 0.3s;
+    }
+    .button:hover {
+      background: #ff003c;
+      color: white;
+      box-shadow: 0 0 10px #ff003c;
     }
   </style>
 </head>
 <body>
 
-  <h1>Welcome to AshTech</h1>
+  <div class="logo">AshTech</div>
   <p>Your one-stop creative brand for music websites, content, and digital identity.</p>
 
   <div class="section">
@@ -65,10 +96,9 @@
 
   <div class="section">
     <h2>📞 Contact Me</h2>
-    <p>Let’s work together. Reach me anytime:</p>
     <p>
-      <a href="https://wa.me/234XXXXXXXXXX" class="button">WhatsApp Me</a><br><br>
-      Instagram: <a href="https://instagram.com/yourhandle">@yourhandle</a><br>
+      <a href="https://wa.me/2349024273902" class="button">WhatsApp Me</a><br><br>
+      Instagram: <a href="https://www.instagram.com/ashraf_allee?igsh=MWJpeGJ5aDEwa2Vjbw==" target="_blank">@ashraf_allee</a><br>
       Email: <a href="mailto:ashtech@email.com">ashtech@email.com</a>
     </p>
   </div>
