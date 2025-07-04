@@ -1,1 +1,1 @@
-Background updated
+Added AshTech background image to assets folder
