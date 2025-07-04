@@ -1,1 +1,1 @@
-Added AshTech background image to assets folder
+Added AshTech background image to assets folderAshTech_BG.png
