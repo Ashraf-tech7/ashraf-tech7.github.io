@@ -198,5 +198,24 @@
     © 2025 AshTech | Designed by Ashraf Aliyu
   </footer>
   </div>
+  <script>
+  const animatedElements = document.querySelectorAll('.animated');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  animatedElements.forEach(el => {
+    observer.observe(el);
+  });
+  </script>
 </body>
 </html>
