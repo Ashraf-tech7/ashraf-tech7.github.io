@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AshTech - Digital Creator</title>
   <style>
+    @keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.buttons a:hover {
+  animation: bounce 0.4s ease;
+}
+    .buttons a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff003c;
+    }
     .overlay {
   background: url('assets/AshTech_BG.png.png') no-repeat center center fixed;
   background-size: cover;
