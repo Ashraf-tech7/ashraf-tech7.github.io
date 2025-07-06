@@ -1,191 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AshTech - Digital Creator</title>
   <style>
-}
-
-.animated {
-  animation: fadeIn 1.5s ease-in-out forwards;
-  opacity: 0;
-}
-
-.logo-animate {
-  animation: pulse 2s infinite;
-}
-</style>
-  <meta charset="UTF-8" />
-  <title>AshTech | Creative Web Builder</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Orbitron', sans-serif;
-      background-image: url('assets/AshTech_BG.png.png');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      color: #fff;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: white;
       text-align: center;
-      padding: 40px 20px;
     }
-    .logo {
-      font-size: 3.5em;
-      color: #ff003c;
-      text-shadow: 0 0 20px #ff003c, 0 0 30px #ff003c;
+
+    header {
+      padding: 50px 20px;
+    }
+
+    .logo-animate {
       animation: pulse 2s infinite;
-      margin-bottom: 20px;
-    }
-    @keyframes pulse {
-      0% { text-shadow: 0 0 5px #ff003c, 0 0 10px #ff003c; }
-      50% { text-shadow: 0 0 20px #ff003c, 0 0 30px #ff003c; }
-      100% { text-shadow: 0 0 5px #ff003c, 0 0 10px #ff003c; }
-    }
-    .section {
-      margin: 60px 0;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
-      border-radius: 12px;
-      animation: fadeIn 1.5s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    h2 {
-      color: #ffdd57;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    a {
-      color: #00ffee;
-      text-decoration: none;
-    }
-    .button {
-      display: inline-block;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 15px red;
       margin-top: 20px;
-      padding: 10px 25px;
-      background: #00ffee;
-      color: #000;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #ff003c;
+      text-shadow: 0 0 10px red;
+      margin-top: 10px;
+    }
+
+    p.tagline {
+      color: #ccc;
+      font-size: 1.2em;
+      margin-top: 5px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .buttons a {
+      padding: 10px 20px;
+      margin: 10px;
+      display: inline-block;
       border-radius: 8px;
-      font-weight: bold;
+      text-decoration: none;
       transition: 0.3s;
     }
-    .button:hover {
+
+    .btn-primary {
       background: #ff003c;
       color: white;
       box-shadow: 0 0 10px #ff003c;
     }
+
+    .btn-secondary {
+      background: #111;
+      color: #ff003c;
+      border: 1px solid #ff003c;
+      box-shadow: 0 0 5px #ff003c;
+    }
+
+    section {
+      margin: 60px auto;
+      padding: 20px;
+      max-width: 1000px;
+    }
+
+    h2 {
+      color: #ff003c;
+      font-size: 2em;
+      text-shadow: 0 0 10px red;
+      margin-bottom: 30px;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #ff003c;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 0 10px #ff003c;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card p {
+      color: #ccc;
+    }
+
+    footer {
+      padding: 30px;
+      font-size: 0.9em;
+      color: #888;
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 10px red; }
+      50% { transform: scale(1.05); box-shadow: 0 0 20px #ff003c; }
+      100% { transform: scale(1); box-shadow: 0 0 10px red; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animated {
+      animation: fadeIn 1.5s ease-in-out forwards;
+      opacity: 0;
+    }
   </style>
 </head>
 <body>
-  <divclass="animated" style="text-align: center; margin-bottom: 10px;">
-  <img src="assets/logo.png.jpg" class="logo-animate" style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 15px red;">
-  <h1 style="font-size: 2.5em; color: #ff003c; text-shadow: 0 0 10px red; margin-top: 10px;">AshTech</h1>
-  <p style="color: #ccc; font-size: 1.2em; margin-top: 5px;">Building the future with code & creativity</p>
-  <divclass="animated" style="margin-top: 15px;">
-    <a href="#projects" style="padding: 10px 20px; margin-right: 10px; background: #ff003c; color: white; text-decoration: none; border-radius: 8px; box-shadow: 0 0 10px #ff003c; transition: 0.3s;">🚀 View My Work</a>
-    <a href="https://wa.me/2349024273902" target="_blank" style="padding: 10px 20px; background: #222; color: #ff003c; text-decoration: none; border: 1px solid #ff003c; border-radius: 8px; box-shadow: 0 0 5px #ff003c; transition: 0.3s;">💬 Hire Me</a>
-  </div>
-</div>
-  <hr style="margin: 50px auto; width: 80%; border: 1px solid #444;">
 
-<h2 class="animated" style="text-align: center; color: #ff003c; ...">🛠 Services</h2>
-
-<divclass="animated" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; gap: 20px; padding: 0 20px;">
-
-  <divclass="animated" style="flex: 1 1 200px; max-width: 250px; background: #111; border: 1px solid #ff003c; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 0 10px #ff003c;">
-    <divclass="animated" style="font-size: 2em;">💻</div>
-    <h3 style="color: #fff; margin-top: 10px;">Web Design</h3>
-    <p style="color: #ccc;">Modern websites that look great on all devices.</p>
-  </div>
-
-  <divclass="animated" style="flex: 1 1 200px; max-width: 250px; background: #111; border: 1px solid #ff003c; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 0 10px #ff003c;">
-    <divclass="animated" style="font-size: 2em;">🎨</div>
-    <h3 style="color: #fff; margin-top: 10px;">Logo & Brand Design</h3>
-    <p style="color: #ccc;">Unique designs that match your style and vision.</p>
-  </div>
-
-  <divclass="animated" style="flex: 1 1 200px; max-width: 250px; background: #111; border: 1px solid #ff003c; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 0 10px #ff003c;">
-    <divclass="animated" style="font-size: 2em;">🎶</div>
-    <h3 style="color: #fff; margin-top: 10px;">Music & Artist Sites</h3>
-    <p style="color: #ccc;">Artist portfolios, music drops, and promo sites.</p>
-  </div>
-
-  <divclass="animated" style="flex: 1 1 200px; max-width: 250px; background: #111; border: 1px solid #ff003c; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 0 10px #ff003c;">
-    <divclass="animated" style="font-size: 2em;">📱</div>
-    <h3 style="color: #fff; margin-top: 10px;">Social Media Branding</h3>
-    <p style="color: #ccc;">Instagram bios, post templates, highlight covers.</p>
-  </div>
-
-</div>
-  <p>Your one-stop creative brand for music websites, content, and digital identity.</p>
-
-  <divclass="animated" class="section">
-    <h2>🧑‍💼 About Ashraf</h2>
-    <p>I'm Ashraf Aliyu — a creative builder from Nigeria who combines music, design, and tech. I help upcoming artists and businesses get online with stunning websites and content that speaks.</p>
-  </div>
-
-  <divclass="animated" class="section">
-    <h2>🛠 Services</h2>
-    <p>
-      - Artist & music websites<br>
-      - Freestyle video editing (for TikTok, YouTube Shorts)<br>
-      - Instagram & social media branding<br>
-      - Basic logo and graphic design<br>
-      - Portfolio creation for musicians
-    </p>
-  </div>
-  <hr style="margin: 60px auto; width: 80%; border: 1px solid #444;">
-
-<h2 id="projects" style="text-align: center; color: #ff003c; font-size: 2em; text-shadow: 0 0 10px red;">🚀 Projects</h2>
-
-<divclass="animated" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px; gap: 20px; padding: 0 20px;">
-
-  <divclass="animated" style="flex: 1 1 250px; max-width: 300px; background: #111; border: 1px solid #ff003c; border-radius: 10px; padding: 20px; box-shadow: 0 0 10px #ff003c;">
-    <h3 style="color: #fff; text-align: center;">🎧 A$iB Music Website</h3>
-    <p style="color: #ccc; text-align: center;">A modern portfolio for Nigerian artist A$iB — built with Marnux and GitHub.</p>
-    <divclass="animated" style="text-align: center; margin-top: 10px;">
-      <a href="https://sfhozqgj.manus.space/" target="_blank" style="color: #ff003c; text-decoration: underline;">Visit Site</a>
+  <header>
+    <img src="assets/logo.png.jpg" alt="AshTech Logo" class="logo-animate">
+    <h1>AshTech</h1>
+    <p class="tagline">Building the future with code & creativity</p>
+    <div class="buttons">
+      <a href="#projects" class="btn-primary">🚀 View My Work</a>
+      <a href="https://wa.me/2349024273902" target="_blank" class="btn-secondary">💬 Hire Me</a>
     </div>
-  </div>
+  </header>
 
-</div>
+  <section class="animated">
+    <h2>🛠 Services</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>💻 Web Design</h3>
+        <p>Modern and responsive websites tailored to you.</p>
+      </div>
+      <div class="card">
+        <h3>🎨 Logo & Brand Design</h3>
+        <p>Custom logo and brand identity to stand out.</p>
+      </div>
+      <div class="card">
+        <h3>🎶 Music & Artist Sites</h3>
+        <p>Personal sites for musicians like A$iB and more.</p>
+      </div>
+      <div class="card">
+        <h3>📱 Social Media Branding</h3>
+        <p>Custom templates and bios for Instagram & more.</p>
+      </div>
+    </div>
+  </section>
 
-  <divclass="animated" class="section">
-    <h2>📞 Contact Me</h2>
-    <p>
-      <a href="https://wa.me/2349024273902" class="button">WhatsApp Me</a><br><br>
-      Instagram: <a href="https://www.instagram.com/ashraf_allee?igsh=MWJpeGJ5aDEwa2Vjbw==" target="_blank">@ashraf_allee</a><br>
-      Email: <a href="mailto:ashtech@email.com">ashtech@email.com</a>
-    </p>
-  </div>
+  <section id="projects" class="animated">
+    <h2>🚀 Projects</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>🎧 A$iB Music Website</h3>
+        <p>A digital artist page for A$iB, hosted on Marnux & GitHub.</p>
+        <a href="https://sfhozqgj.manus.space/" target="_blank" style="color: #ff003c;">Visit Site</a>
+      </div>
+    </div>
+  </section>
 
-  <divclass="animated" class="section">
-    <h2>💼 Projects</h2>
-    <p>
-      <a href="https://sfhozqgj.manus.space" target="_blank">A$iB Music Website (Project)</a><br>
-      More coming soon...
-    </p>
-  </div>
-  <hr style="margin: 60px auto; width: 80%; border: 1px solid #444;">
+  <section class="animated">
+    <h2>👨‍💻 About Me</h2>
+    <div class="card" style="width: auto; max-width: 800px;">
+      <p>
+        Hey! I'm <strong>Ashraf Aliyu</strong>, the creator of <strong>AshTech</strong>. I'm a self-taught designer and web creator from Nigeria 🇳🇬. I build websites, logos, artist pages, and help others create their digital presence — just like I did for my brother <strong>A$iB</strong>. Whether you're an artist, entrepreneur, or content creator, AshTech is here to help you shine online.
+      </p>
+    </div>
+  </section>
 
-<h2 style="text-align: center; color: #ff003c; font-size: 2em; text-shadow: 0 0 10px red;">👨‍💻 About Me</h2>
+  <footer>
+    © 2025 AshTech | Designed by Ashraf Aliyu
+  </footer>
 
-<divclass="animated" style="max-width: 800px; margin: 20px auto; padding: 20px; background: #111; border: 1px solid #ff003c; border-radius: 10px; box-shadow: 0 0 10px #ff003c;">
-  <p style="color: #ccc; font-size: 1.1em; line-height: 1.7;">
-    Hey! I'm <strong>Ashraf Aliyu</strong>, the creator of <strong>AshTech</strong>. I'm a self-taught designer and web creator from Nigeria 🇳🇬. I build websites, logos, artist pages, and help others create their digital presence — just like I did for my brother <strong>A$iB</strong>. Whether you're an artist, entrepreneur, or content creator, AshTech is here to help you shine online.
-  </p>
-</div>
-  
-Added animation for logo and section titles
 </body>
 </html>
