@@ -1,6 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 10px red; }
+  50% { transform: scale(1.05); box-shadow: 0 0 20px #ff003c; }
+  100% { transform: scale(1); box-shadow: 0 0 10px red; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animated {
+  animation: fadeIn 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.logo-animate {
+  animation: pulse 2s infinite;
+}
+</style>
   <meta charset="UTF-8" />
   <title>AshTech | Creative Web Builder</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
