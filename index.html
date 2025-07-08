@@ -48,18 +48,54 @@
   margin: 10px;
 }
 
-/* Background images for each testimonial */
-.testimonial.asib {
-  background-image: url('assets/asib_testimonial.jpg'); /* Your A$iB image */
+/* Testimonials Section Styling */
+.testimonial-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.testimonial.designer {
+.testimonial-card {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px #ff003c;
+  border: 1px solid #ff003c;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+}
+
+.testimonial-text {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/* Specific Backgrounds */
+.testimonial-card.asib {
+  background-image: url('assets/asib_testimonial.jpg');
+}
+
+.testimonial-card.designer {
   background-image: url('assets/branding_testimonial.png');
 }
 
-.testimonial.developer {
+.testimonial-card.developer {
   background-image: url('assets/webdesign_testimonial.png');
-    }
+}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
