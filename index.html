@@ -1,265 +1,184 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AshTech - Digital Creator</title>
-  <meta name="description" content="AshTech by Ashraf Aliyu – Creating beautiful websites, logos, and digital designs for artists and businesses.">
-  <meta name="keywords" content="AshTech, web design, logo, digital creator, Ashraf, Nigeria, A$iB, portfolio, developer">
-  <meta name="author" content="Ashraf Aliyu">
-  <link rel="icon" href="assets/logo.png" type="image/png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AshTech | Ashraf Aliyu</title>
+  <link rel="icon" href="assets/logo.png" type="image/png" />
   <style>
-  /* Reset & global */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-
-  body {
-    background: #0f0f0f;
-    color: #fff;
-    scroll-behavior: smooth;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  /* Loader */
-  #loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #000;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #fff;
-  }
-
-  /* Container */
-  .container {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
-  }
-
-  header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 1.1rem;
-    color: #ccc;
-    margin-bottom: 20px;
-  }
-
-  .button {
-    background: #ff0055;
-    color: #fff;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 30px;
-    transition: 0.3s;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .button:hover {
-    background: #e6004c;
-  }
-
-  /* Sections */
-  section {
-    margin-bottom: 60px;
-  }
-
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #fff;
-  }
-
-  .project, .service, .pricing-box {
-    background: #1a1a1a;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-    transition: 0.3s;
-  }
-
-  .project:hover, .service:hover, .pricing-box:hover {
-    transform: translateY(-5px);
-    background: #222;
-  }
-
-  .pricing-box {
-    text-align: center;
-  }
-
-  .pricing-box h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-
-  .pricing-box p {
-    font-size: 1rem;
-    color: #aaa;
-  }
-
-  .pricing-box span {
-    display: block;
-    font-size: 1.3rem;
-    color: #fff;
-    margin-top: 10px;
-  }
-
-  footer {
-    text-align: center;
-    padding: 20px;
-    color: #777;
-    border-top: 1px solid #333;
-    margin-top: 40px;
-  }
-
-  /* Bubbles */
-  .bubbles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
-  .bubbles li {
-    position: absolute;
-    list-style: none;
-    display: block;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    animation: rise 25s linear infinite;
-    bottom: -150px;
-    border-radius: 50%;
-  }
-
-  .bubbles li:nth-child(1) { left: 10%; width: 40px; height: 40px; animation-duration: 20s; }
-  .bubbles li:nth-child(2) { left: 20%; width: 20px; height: 20px; animation-duration: 22s; }
-  .bubbles li:nth-child(3) { left: 25%; width: 35px; height: 35px; animation-duration: 18s; }
-  .bubbles li:nth-child(4) { left: 40%; width: 15px; height: 15px; animation-duration: 26s; }
-  .bubbles li:nth-child(5) { left: 70%; width: 30px; height: 30px; animation-duration: 19s; }
-  .bubbles li:nth-child(6) { left: 80%; width: 25px; height: 25px; animation-duration: 17s; }
-  .bubbles li:nth-child(7) { left: 90%; width: 20px; height: 20px; animation-duration: 21s; }
-  .bubbles li:nth-child(8) { left: 50%; width: 40px; height: 40px; animation-duration: 20s; }
-  .bubbles li:nth-child(9) { left: 65%; width: 25px; height: 25px; animation-duration: 24s; }
-  .bubbles li:nth-child(10){ left: 85%; width: 30px; height: 30px; animation-duration: 23s; }
-
-  @keyframes rise {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-1000px); opacity: 0; }
-  }
-
-  /* Scroll animation */
-  .animated {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease-out;
-  }
-
-  .animated.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      line-height: 1.6;
+      position: relative;
+      overflow-x: hidden;
+    }
+    a {
+      color: #ff003c;
+      text-decoration: none;
+    }
+    h1, h2, h3 {
+      margin-bottom: 10px;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
     }
 
+    /* Bubble Background */
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: rise 20s linear infinite;
+    }
+    @keyframes rise {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-1000px) scale(0.5); opacity: 0; }
+    }
+
+    /* Layout */
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+    .logo {
+      max-width: 120px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #ff003c;
+    }
+    .hero p {
+      margin: 15px 0;
+    }
     .button {
-      padding: 10px 20px;
+      background: #ff003c;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .button:hover {
+      background: #e60034;
     }
 
-    .project, .service, .pricing-box {
-      padding: 15px;
+    /* Cards */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
     }
-  }
-</style>
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #111;
+    }
+    .project-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      border-radius: 15px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: white;
+      box-shadow: 0 0 15px #000;
+    }
+    .testimonial-text {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 10px;
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+      background: #111;
+      color: #888;
+    }
+
+    /* Animations */
+    .animated {
+      opacity: 0;
+      transition: opacity 1s ease-out;
+    }
+    .animated.visible {
+      opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <ul class="bubbles">
-  <li></li><li></li><li></li><li></li><li></li>
-  <li></li><li></li><li></li><li></li><li></li>
-  </ul>
-  <div id="loader">
-    <div class="spinner"></div>
+
+  <!-- Bubbles Background -->
+  <div class="bubbles">
+    <div class="bubble" style="width:30px; left:10%; animation-duration:20s;"></div>
+    <div class="bubble" style="width:50px; left:30%; animation-duration:25s;"></div>
+    <div class="bubble" style="width:20px; left:50%; animation-duration:18s;"></div>
+    <div class="bubble" style="width:40px; left:70%; animation-duration:22s;"></div>
+    <div class="bubble" style="width:35px; left:90%; animation-duration:28s;"></div>
   </div>
 
-  <div class="overlay">
-
-    <!-- Header -->
-    <header>
-      <img src="assets/logo.png" alt="AshTech Logo" class="logo-animate" style="animation: pulse 2s infinite; width:160px; height:160px; border-radius:50%; box-shadow:0 0 15px red; margin-top:20px;">
-      <h1 style="font-size:2.5em; color:#ff003c; text-shadow:0 0 10px red; margin-top:10px;">AshTech</h1>
-      <p class="tagline" style="color:#ccc; font-size:1.2em;">Building the future with code & creativity</p>
-      <div class="buttons" style="margin-top:20px;">
-        <a href="#projects" class="btn-primary" style="background:#ff003c;color:#fff;padding:10px 20px;border-radius:8px;box-shadow:0 0 10px #ff003c;text-decoration:none;margin:5px;">🚀 View My Work</a>
-        <a href="#contact" class="btn-secondary" style="background:#111;color:#ff003c;padding:10px 20px;border:1px solid #ff003c;border-radius:8px;box-shadow:0 0 5px #ff003c;text-decoration:none;margin:5px;">📬 Contact Me</a>
-        <section id="hire" class="animated">
-  <h2>💼 Hire Me</h2>
-  <div class="card">
-    <p>I'm available for web design, branding, and digital projects. Let's collaborate!</p>
-    <ul>
-      <li>🎨 Logo design – 5,000 NGN</li>
-      <li>🎶 Artist Website – 50,000 NGN</li>
-      <li>📸 Instagram Kit – 15,000 NGN</li>
-    </ul>
-    <div class="buttons">
-      <a href="https://wa.me/2349024273902" target="_blank" class="btn-primary">📲 Message on WhatsApp</a>
-    </div>
-  </div>
-</section>
-      </div>
+  <div class="container">
+    <!-- Header / Hero -->
+    <header class="hero animated">
+      <img src="assets/logo.png" alt="AshTech Logo" class="logo" />
+      <h1>Hi, I'm Ashraf Aliyu</h1>
+      <p>Web Designer • Content Creator • Brand Developer</p>
+      <a href="#contact"><button class="button">🚀 Hire Me</button></a>
     </header>
 
-    <!-- Services -->
-    <section class="animated">
-      <h2>🛠 Services</h2>
-      <div class="card-container">
-        <div class="card">
-          <h3>💻 Web Design</h3><p>Modern and responsive websites tailored to you.</p>
-        </div>
-        <div class="card">
-          <h3>🎨 Logo & Brand Design</h3><p>Custom logo and brand identity to stand out.</p>
-        </div>
-        <div class="card">
-          <h3>🎶 Music & Artist Sites</h3><p>Personal sites for musicians like A$iB and more.</p>
-        </div>
-        <div class="card">
-          <h3>📱 Social Media Branding</h3><p>Custom templates and bios for Instagram & more.</p>
-        </div>
-      </div>
+    <!-- About -->
+    <section class="animated" id="about">
+      <h2>👋 About Me</h2>
+      <p>I’m Ashraf, a creative mind behind AshTech. I design websites, logos, and social media content that stands out and tells a story.</p>
     </section>
 
     <!-- Skills -->
@@ -279,13 +198,13 @@
       <div class="card-container">
         <div class="card project-card">
           <h3>🕋 Tribute Show Flyer</h3>
-          <img src="assets/show_invite.png" alt="Tribute Flyer" style="width:100%; border-radius:10px; margin-bottom:10px;">
+          <img src="assets/show_invite.png" alt="Tribute Flyer">
           <p>A special tribute design honoring the Prophet Muhammad (s.a.w), created for a spiritual music event.</p>
         </div>
         <div class="card project-card">
           <h3>🎧 A$iB Music Website</h3>
           <p>A digital artist page for A$iB, hosted on Marnux & GitHub.</p>
-          <a href="https://sfhozqgj.manus.space/" target="_blank" style="color:#ff003c;">Visit Site</a>
+          <a href="https://sfhozqgj.manus.space/" target="_blank">Visit Site</a>
         </div>
       </div>
     </section>
@@ -325,39 +244,35 @@
       </div>
     </section>
 
-    <!-- Contact & Footer -->
+    <!-- Contact -->
     <section class="animated" id="contact">
       <h2>📬 Contact Me</h2>
       <div class="card" style="max-width:600px; margin:0 auto;">
         <p>Want to work with me? Have a project in mind?</p>
-        <p>📱 WhatsApp: <a href="https://wa.me/2349024273902" style="color:#ff003c;">Chat Now</a></p>
-        <p>📧 Email: <a href="mailto:ashraf@gmail.com" style="color:#ff003c;">ashraf@gmail.com</a></p>
-        <p>📸 Instagram: <a href="https://instagram.com/ashraf_allee" style="color:#ff003c;">@ashraf_allee</a></p>
+        <p>📱 WhatsApp: <a href="https://wa.me/2349024273902">Chat Now</a></p>
+        <p>📧 Email: <a href="mailto:ashraf@gmail.com">ashraf@gmail.com</a></p>
+        <p>📸 Instagram: <a href="https://instagram.com/ashraf_allee">@ashraf_allee</a></p>
       </div>
     </section>
 
+    <!-- Footer -->
     <footer>© 2025 AshTech | Designed by Ashraf Aliyu</footer>
   </div>
 
-  <!-- Scripts -->
+  <!-- Scroll Animation Script -->
   <script>
-  window.addEventListener("load", () => {
-    document.getElementById("loader").style.display = "none";
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
+    document.querySelectorAll('.animated').forEach(el => {
+      el.style.opacity = 0;
+      new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, {threshold: 0.1}).observe(el);
     });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll(".animated").forEach(el => {
-    observer.observe(el);
-  });
-</script>
+  </script>
 
   <!-- Chatbase Chatbot Embed -->
   <script>
@@ -367,5 +282,6 @@
   <div style="position:fixed; bottom:100px; right:20px; background:#ff003c; color:#fff; padding:8px 12px; border-radius:8px; box-shadow:0 0 10px #ff003c; z-index:9999;">
     💬 Need Help?
   </div>
+
 </body>
 </html>
