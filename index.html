@@ -1,287 +1,172 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AshTech | Ashraf Aliyu</title>
-  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AshTech – Digital Creator</title>
+  <meta name="description" content="AshTech by Ashraf Aliyu – Creating websites, logos, digital designs.">
+  <meta name="keywords" content="AshTech, web design, Nigeria, A$iB">
+  <meta name="author" content="Ashraf Aliyu">
+  <link rel="icon" href="assets/logo.png" type="image/png">
   <style>
-    /* Reset and Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0f0f0f;
-      color: #fff;
-      line-height: 1.6;
-      position: relative;
-      overflow-x: hidden;
-    }
-    a {
-      color: #ff003c;
-      text-decoration: none;
-    }
-    h1, h2, h3 {
-      margin-bottom: 10px;
-    }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-      position: relative;
-      z-index: 1;
-    }
+    /* Reset & global */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Poppins,sans-serif; }
+    body { background:#0f0f0f; color:#fff; overflow-x:hidden; }
+    a { text-decoration:none; }
 
-    /* Bubble Background */
-    .bubbles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .bubble {
-      position: absolute;
-      bottom: -100px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: rise 20s linear infinite;
-    }
-    @keyframes rise {
-      0% { transform: translateY(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-1000px) scale(0.5); opacity: 0; }
-    }
+    /* Loader */
+    #loader { position:fixed; top:0;left:0;width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center;z-index:99; }
+    .spinner { border:5px solid #222; border-top:5px solid #ff003c; border-radius:50%; width:50px;height:50px; animation:spin 1s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+
+    /* Bubbles */
+    .bubbles { position:fixed; top:0;left:0;width:100%;height:100%;pointer-events:none; z-index:0; }
+    .bubbles li { position:absolute; bottom:-100px; background:rgba(255,255,255,0.1); border-radius:50%; animation:rise linear infinite; }
+    .bubbles li:nth-child(1){left:10%;width:40px;height:40px;animation-duration:20s;}
+    .bubbles li:nth-child(2){left:20%;width:20px;height:20px;animation-duration:22s;}
+    .bubbles li:nth-child(3){left:30%;width:35px;height:35px;animation-duration:18s;}
+    .bubbles li:nth-child(4){left:45%;width:15px;height:15px;animation-duration:26s;}
+    .bubbles li:nth-child(5){left:60%;width:30px;height:30px;animation-duration:19s;}
+    .bubbles li:nth-child(6){left:75%;width:25px;height:25px;animation-duration:17s;}
+    .bubbles li:nth-child(7){left:85%;width:20px;height:20px;animation-duration:21s;}
+    @keyframes rise { from { transform:translateY(0); opacity:1; } to { transform:translateY(-800px); opacity:0; } }
 
     /* Layout */
-    header {
-      text-align: center;
-      padding: 60px 20px 30px;
-    }
-    .logo {
-      max-width: 120px;
-      margin-bottom: 20px;
-      border-radius: 50%;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #ff003c;
-    }
-    .hero p {
-      margin: 15px 0;
-    }
-    .button {
-      background: #ff003c;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .button:hover {
-      background: #e60034;
-    }
+    .overlay { position:relative; z-index:1; padding:20px; max-width:1000px; margin:auto; }
+    header, section, footer { margin-bottom:40px; text-align:center; }
+    h1 { font-size:2.5rem; color:#ff003c; text-shadow:0 0 10px red; margin-bottom:10px; }
+    p.tagline { color:#ccc; font-size:1.2rem; margin-bottom:20px; }
+    .button { display:inline-block; margin:5px; padding:10px 20px; border-radius:8px; font-size:1rem; transition:0.3s; }
+    .btn-primary { background:#ff003c; color:#fff; box-shadow:0 0 10px #ff003c; }
+    .btn-secondary { background:#111; color:#ff003c; border:1px solid #ff003c; box-shadow:0 0 5px #ff003c; }
+    .button:hover { transform:scale(1.05); }
 
-    /* Cards */
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .card {
-      background: #1a1a1a;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px #111;
-    }
-    .project-card img {
-      width: 100%;
-      border-radius: 10px;
-    }
+    .card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .card, .project-card, .testimonial-card { background:#1a1a1a; border:1px solid #ff003c; border-radius:12px; overflow:hidden; transition:transform .3s,box-shadow .3s; }
+    .card, .project-card { padding:20px; width:280px; box-shadow:0 0 10px rgba(255,0,60,0.3); }
+    .project-card:hover, .card:hover { transform:translateY(-5px); }
 
-    /* Testimonials */
-    .testimonial-card {
-      background-size: cover;
-      background-position: center;
-      height: 300px;
-      border-radius: 15px;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      padding: 20px;
-      color: white;
-      box-shadow: 0 0 15px #000;
-    }
-    .testimonial-text {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 15px;
-      border-radius: 10px;
-      width: 100%;
-    }
+    .testimonial-card { position:relative; width:280px; height:250px; background-size:cover; background-position:center; box-shadow:0 0 15px rgba(255,0,60,0.5); }
+    .testimonial-text { position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.7); padding:15px; color:#fff; text-shadow:1px 1px 3px #000; }
 
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
-      background: #111;
-      color: #888;
-    }
+    .animated { opacity:0; transform:translateY(20px); transition:opacity .8s ease,transform .8s ease; }
+    .animated.visible { opacity:1; transform:translateY(0); }
 
-    /* Animations */
-    .animated {
-      opacity: 0;
-      transition: opacity 1s ease-out;
-    }
-    .animated.visible {
-      opacity: 1;
-    }
+    footer { color:#777; font-size:.9rem; border-top:1px solid #333; padding-top:20px; }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
+    /* FAQ/Footer chatbot prompt */
+    #chatbot-prompt { position:fixed; bottom:100px;right:20px; background:#ff003c;color:#fff;padding:8px 12px;border-radius:8px;box-shadow:0 0 10px #ff003c; z-index:999; cursor: pointer; }
+
+    @media(max-width:768px){
+      h1 { font-size:2rem; }
+      .card, .project-card, .testimonial-card { width:90%; }
     }
   </style>
 </head>
 <body>
+  <ul class="bubbles">
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+  </ul>
+  <div id="loader"><div class="spinner"></div></div>
 
-  <!-- Bubbles Background -->
-  <div class="bubbles">
-    <div class="bubble" style="width:30px; left:10%; animation-duration:20s;"></div>
-    <div class="bubble" style="width:50px; left:30%; animation-duration:25s;"></div>
-    <div class="bubble" style="width:20px; left:50%; animation-duration:18s;"></div>
-    <div class="bubble" style="width:40px; left:70%; animation-duration:22s;"></div>
-    <div class="bubble" style="width:35px; left:90%; animation-duration:28s;"></div>
-  </div>
+  <div class="overlay">
 
-  <div class="container">
-    <!-- Header / Hero -->
-    <header class="hero animated">
-      <img src="assets/logo.png" alt="AshTech Logo" class="logo" />
-      <h1>Hi, I'm Ashraf Aliyu</h1>
-      <p>Web Designer • Content Creator • Brand Developer</p>
-      <a href="#contact"><button class="button">🚀 Hire Me</button></a>
+    <!-- Header -->
+    <header class="animated">
+      <img src="assets/logo.png" alt="AshTech Logo" style="width:160px;height:160px;border-radius:50%;animation:spin 2s linear infinite;box-shadow:0 0 15px red;margin-bottom:20px;">
+      <h1>AshTech</h1>
+      <p class="tagline">Building the future with code & creativity</p>
+      <a href="#projects" class="button btn-primary">🚀 View My Work</a>
+      <a href="#contact" class="button btn-secondary">📬 Contact Me</a>
+      <a href="#hire" class="button btn-primary">💼 Hire Me</a>
     </header>
 
-    <!-- About -->
-    <section class="animated" id="about">
-      <h2>👋 About Me</h2>
-      <p>I’m Ashraf, a creative mind behind AshTech. I design websites, logos, and social media content that stands out and tells a story.</p>
+    <!-- Services -->
+    <section class="animated">
+      <h2 class="section-title">🛠 Services</h2>
+      <div class="card-container">
+        <div class="card"><h3>💻 Web Design</h3><p>Modern responsive websites.</p></div>
+        <div class="card"><h3>🎨 Logo & Brand Design</h3><p>Standout brand identity.</p></div>
+        <div class="card"><h3>🎶 Music & Artist Sites</h3><p>Sites for musicians like A$iB.</p></div>
+        <div class="card"><h3>📱 Social Media Branding</h3><p>Design kits for Instagram & more.</p></div>
+      </div>
+    </section>
+
+    <!-- Hire Me -->
+    <section id="hire" class="animated">
+      <h2 class="section-title">💼 Hire Me</h2>
+      <div class="pricing-box"><h3>🎨 Logo Design</h3><span>5,000 NGN</span></div>
+      <div class="pricing-box"><h3>🎶 Artist Website</h3><span>50,000 NGN</span></div>
+      <div class="pricing-box"><h3>📸 Instagram Kit</h3><span>15,000 NGN</span></div>
+      <a href="https://wa.me/2349024273902" class="button btn-primary">📲 Message on WhatsApp</a>
     </section>
 
     <!-- Skills -->
     <section class="animated" id="skills">
-      <h2>🧠 Skills & Tools</h2>
+      <h2 class="section-title">🧠 Skills & Tools</h2>
       <div class="card-container">
-        <div class="card"><h3>💻 HTML & CSS</h3><p>Clean, responsive websites built from scratch.</p></div>
-        <div class="card"><h3>🎨 Canva & CapCut</h3><p>Modern designs for social media, logos, and videos.</p></div>
-        <div class="card"><h3>🖥 GitHub</h3><p>Code hosting and project collaboration.</p></div>
-        <div class="card"><h3>📱 Mobile Design</h3><p>Optimized layouts for mobile and tablet users.</p></div>
+        <div class="service"><h3>HTML & CSS</h3></div>
+        <div class="service"><h3>Canva & CapCut</h3></div>
+        <div class="service"><h3>GitHub</h3></div>
+        <div class="service"><h3>Mobile Design</h3></div>
       </div>
     </section>
 
     <!-- Projects -->
     <section id="projects" class="animated">
-      <h2>🚀 Projects</h2>
+      <h2 class="section-title">🚀 Projects</h2>
       <div class="card-container">
-        <div class="card project-card">
-          <h3>🕋 Tribute Show Flyer</h3>
-          <img src="assets/show_invite.png" alt="Tribute Flyer">
-          <p>A special tribute design honoring the Prophet Muhammad (s.a.w), created for a spiritual music event.</p>
-        </div>
-        <div class="card project-card">
-          <h3>🎧 A$iB Music Website</h3>
-          <p>A digital artist page for A$iB, hosted on Marnux & GitHub.</p>
-          <a href="https://sfhozqgj.manus.space/" target="_blank">Visit Site</a>
-        </div>
+        <div class="project-card"><h3>🕋 Tribute Show Flyer</h3><img src="assets/show_invite.png" alt="Flyer" style="width:100%;border-radius:10px;"><p>Tribute to Prophet Muhammad (s.a.w).</p></div>
+        <div class="project-card"><h3>🎧 A$iB Music Website</h3><p>Artist page hosted on Marnux & GitHub.</p><a href="https://sfhozqgj.manus.space/" class="button btn-secondary">Visit Site</a></div>
       </div>
     </section>
 
     <!-- Testimonials -->
     <section class="animated" id="testimonials">
-      <h2>🌟 Testimonials</h2>
+      <h2 class="section-title">🌟 Testimonials</h2>
       <div class="card-container">
         <div class="testimonial-card" style="background-image:url('assets/asib_testimonial.jpg');">
-          <div class="testimonial-text">
-            <h3>🎤 A$iB</h3>
-            <p>"AshTech built a dope music website for me! It really shows my style. Highly recommended."</p>
-          </div>
+          <div class="testimonial-text"><h3>A$iB</h3><p>"AshTech built a dope music website for me!"</p></div>
         </div>
         <div class="testimonial-card" style="background-image:url('assets/branding_testimonial.png');">
-          <div class="testimonial-text">
-            <h3>🎨 Logo Client</h3>
-            <p>"Ashraf helped my brand stand out with a perfect logo. Simple, fast, and professional work."</p>
-          </div>
+          <div class="testimonial-text"><h3>Logo Client</h3><p>"Perfect logo, simple & professional."</p></div>
         </div>
         <div class="testimonial-card" style="background-image:url('assets/webdesign_testimonial.png');">
-          <div class="testimonial-text">
-            <h3>💻 Website Client</h3>
-            <p>"The website AshTech built for my business looks amazing and works perfectly on phones too!"</p>
-          </div>
+          <div class="testimonial-text"><h3>Website Client</h3><p>"Amazing website that works on any device."</p></div>
         </div>
       </div>
     </section>
 
     <!-- Blog -->
     <section class="animated" id="blog">
-      <h2>📰 Blog</h2>
-      <div class="card" style="max-width:800px; margin:0 auto;">
-        <h3 style="color:#ff003c;">The Making of A$iB’s Music Website</h3>
-        <p style="color:#ccc;">How we built an artist website from scratch using HTML, CSS, and creativity. A story of hustle, vision, and results.</p>
-        <a href="blog1.html" target="_blank" style="color:#ff003c; font-weight:bold;">📖 Read Full Article</a>
-      </div>
+      <h2 class="section-title">📰 Blog</h2>
+      <div class="card"><h3>The Making of A$iB’s Music Website</h3><p>Story of hustle, vision, and results.</p><a href="blog1.html" class="button btn-secondary">📖 Read Full Article</a></div>
     </section>
 
     <!-- Contact -->
     <section class="animated" id="contact">
-      <h2>📬 Contact Me</h2>
-      <div class="card" style="max-width:600px; margin:0 auto;">
-        <p>Want to work with me? Have a project in mind?</p>
-        <p>📱 WhatsApp: <a href="https://wa.me/2349024273902">Chat Now</a></p>
-        <p>📧 Email: <a href="mailto:ashraf@gmail.com">ashraf@gmail.com</a></p>
-        <p>📸 Instagram: <a href="https://instagram.com/ashraf_allee">@ashraf_allee</a></p>
-      </div>
+      <h2 class="section-title">📬 Contact Me</h2>
+      <div class="card"><p>📱 <a href="https://wa.me/2349024273902" class="btn-secondary">WhatsApp</a></p><p>📧 <a href="mailto:ashraf@gmail.com" class="btn-secondary">Email</a></p><p>📸 <a href="https://instagram.com/ashraf_allee" class="btn-secondary">@ashraf_allee</a></p></div>
     </section>
 
-    <!-- Footer -->
     <footer>© 2025 AshTech | Designed by Ashraf Aliyu</footer>
+
   </div>
 
-  <!-- Scroll Animation Script -->
-  <script>
-    document.querySelectorAll('.animated').forEach(el => {
-      el.style.opacity = 0;
-      new IntersectionObserver((entries, obs) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            obs.unobserve(e.target);
-          }
-        });
-      }, {threshold: 0.1}).observe(el);
-    });
-  </script>
-
-  <!-- Chatbase Chatbot Embed -->
+  <!-- Chatbot -->
   <script>
     window.chatbaseConfig = { chatbotId: "1PHnQYKqimS1AoCiUqyrB" };
   </script>
   <script src="https://www.chatbase.co/embed.min.js" defer></script>
-  <div style="position:fixed; bottom:100px; right:20px; background:#ff003c; color:#fff; padding:8px 12px; border-radius:8px; box-shadow:0 0 10px #ff003c; z-index:9999;">
-    💬 Need Help?
-  </div>
+  <div id="chatbot-prompt">💬 Need Help?</div>
 
+  <script>
+    // loader hide
+    window.addEventListener("load", () => document.getElementById("loader").style.display="none");
+    // scroll animations
+    const obs = new IntersectionObserver((e)=>e.forEach(i=>{ if(i.isIntersecting){ i.target.classList.add("visible"); obs.unobserve(i.target); }}), {threshold:0.1});
+    document.querySelectorAll(".animated").forEach(n=>obs.observe(n));
+  </script>
 </body>
 </html>
