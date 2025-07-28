@@ -141,7 +141,48 @@
   color: #1da1f2; /* You can adjust color */
   transform: scale(1.2);
   }
+.contact-toggle {
+  text-align: center;
+  margin: 40px 0;
+}
 
+.contact-toggle button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #00ffcc;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.contact-toggle button:hover {
+  background-color: #00ccaa;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+  transition: all 0.4s ease;
+}
+
+.contact-icons a {
+  font-size: 32px;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-icons a:hover {
+  color: #00ffcc;
+  transform: scale(1.2);
+}
+
+.hidden {
+  display: none;
+      }
   </style>
 </head>
 <body>
@@ -232,13 +273,37 @@
       <div class="card"><h3>The Making of A$iB’s Music Website</h3><p>Story of hustle, vision, and results.</p><a href="blog1.html" class="button btn-secondary">📖 Read Full Article</a></div>
     </section>
 
-    <!-- Contact -->
-    <section class="animated" id="contact">
-      <h2 class="section-title">📬 Contact Me</h2>
-      <div class="card"><p>📱 <a href="https://wa.me/2349024273902" class="btn-secondary">WhatsApp</a></p><p>📧 <a href="mailto:ashraf@gmail.com" class="btn-secondary">Email</a></p><p>📸 <a href="https://instagram.com/ashraf_allee" class="btn-secondary">@ashraf_allee</a></p></div>
-    </section>
+    
+    <!-- Contact Button -->
+<div class="contact-toggle">
+  <button onclick="toggleContact()">Contact Me</button>
+</div>
 
-    <footer>© 2025 AshTech | Designed by Ashraf Aliyu</footer>
+<!-- Hidden Contact Icons -->
+<div id="contact-section" class="contact-icons hidden">
+  <a href="https://wa.me/2349024273902" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="mailto:ashrafaliyu96@gmail.com" target="_blank" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://www.instagram.com/ashraf_allee?igsh=MWJpeGJ5aDEwa2Vjbw==" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://ng.linkedin.com/in/ashraf-aliyu-636778313" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function toggleContact() {
+    const section = document.getElementById("contact-section");
+    section.classList.toggle("hidden");
+  }
+</script>
+
+    
 
   </div>
 
