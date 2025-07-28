@@ -419,17 +419,6 @@ header {
     }
   </style>
 </head>
-  <header>
-  <nav class="navbar">
-    <div class="logo">AshTech</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <ul class="nav-links" id="navLinks">
-      <a href="about.html">👨‍💻 About Me</a>
-<a href="blog.html">📰 Blog</a>
-      
-    </ul>
-  </nav>
-  </header>
 <body>
   <ul class="bubbles">
     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
@@ -439,12 +428,18 @@ header {
   <div class="overlay">
 
     <!-- Header -->
-    <header>
+    <!-- SINGLE CLEAN HEADER -->
+<header>
   <nav class="navbar">
-    <ul class="nav-links">
-      <li class="logo">AshTech</li>
+    <div class="logo">AshTech</div>
+
+    <!-- Hamburger menu icon -->
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <!-- Hidden nav links -->
+    <ul class="nav-links" id="navLinks">
       <li><a href="about.html">🙋‍♂️ About Me</a></li>
-      <li><a href="blog1.html">📰 Blog</a></li>
+      <li><a href="blog.html">📰 Blog</a></li>
     </ul>
   </nav>
 </header>
@@ -456,16 +451,7 @@ header {
       <a href="javascript:void(0);" class="button btn-secondary" onclick="toggleContact(); document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });">📬 Contact Me</a>
       <a href="#hire" class="button btn-primary">💼 Hire Me</a>
     </header>
-    <header>
-  <div class="logo">AshTech</div>
-  <nav class="nav-menu" id="navMenu">
-    <ul>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="blog.html">Blog</a></li>
-    </ul>
-  </nav>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-</header>
+    
 
     <!-- Services -->
     <section class="animated">
