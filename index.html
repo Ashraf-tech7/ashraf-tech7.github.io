@@ -417,6 +417,59 @@ header {
     display: block;
   }
     }
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: #111;
+  color: white;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Responsive (Mobile) Style */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+      }
   </style>
 </head>
 <body>
@@ -598,11 +651,6 @@ header {
     <p style="font-size: 12px; color: #666;">&copy; 2025 AshTech. All rights reserved.</p>
   </div>
   </footer>
-  <script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
-  }
-  </script>
   <script>
   function toggleMenu() {
     const navMenu = document.getElementById('navMenu');
