@@ -289,8 +289,78 @@
     display: block;
   }
   }
+    /* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00f0ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.menu-icon {
+  font-size: 26px;
+  color: #fff;
+  display: none;
+  cursor: pointer;
+}
+
+/* Responsive Mobile Menu */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #111;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+  }
   </style>
 </head>
+  <header>
+  <nav class="navbar">
+    <div class="logo">AshTech</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">🙋‍♂️ About Me</a></li>
+      <li><a href="#blog">📰 Blog</a></li>
+    </ul>
+  </nav>
+  </header>
 <body>
   <ul class="bubbles">
     <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
