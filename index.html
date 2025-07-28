@@ -222,6 +222,73 @@
 .nav-menu li a:hover {
   color: #ff0066;
   }
+    /* Base styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00f0ff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ff0077;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  font-size: 26px;
+  color: #fff;
+  display: none;
+  cursor: pointer;
+}
+
+/* Responsive Menu */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #111;
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+  }
   </style>
 </head>
 <body>
@@ -401,5 +468,10 @@
     <p style="font-size: 12px; color: #666;">&copy; 2025 AshTech. All rights reserved.</p>
   </div>
   </footer>
+  <script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+  </script>
 </body>
 </html>
