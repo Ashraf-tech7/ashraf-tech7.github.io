@@ -872,17 +872,7 @@ header {
     const obs = new IntersectionObserver((e)=>e.forEach(i=>{ if(i.isIntersecting){ i.target.classList.add("visible"); obs.unobserve(i.target); }}), {threshold:0.1});
     document.querySelectorAll(".animated").forEach(n=>obs.observe(n));
   </script>
-  <script>
-  function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("show");
-  }
-  </script>
-  <script>
-  function toggleMenu() {
-    document.getElementById("navMenu").classList.toggle("active");
-  }
-  </script>
+  
   <div class="bubbles">
   <span style="--i:11"></span>
   <span style="--i:12"></span>
@@ -942,10 +932,6 @@ header {
     <p style="font-size: 12px; color: #666;">&copy; 2025 AshTech. All rights reserved.</p>
   </div>
   </footer>
-  <script>
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('show');
-  }
-  </script>
+  
 </body>
 </html>
