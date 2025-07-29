@@ -204,6 +204,66 @@ header {
   font-weight: bold;
 }
       }
+    
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+  }
+
+  .menu-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* Responsive for mobile */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #222;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -213,7 +273,17 @@ header {
   <div id="loader"><div class="spinner"></div></div>
 
   <div class="overlay">
-
+    <!-- HEADER -->
+<header>
+  <nav class="navbar">
+    <div class="logo">AshTech</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">🙋‍♂️ About Me</a></li>
+      <li><a href="blog.html">📰 Blog</a></li>
+    </ul>
+  </nav>
+</header>
     <!-- Header -->
     <header class="animated">
       <img src="assets/logo.png" alt="AshTech Logo" style="width:160px;height:160px;border-radius:50%;animation:spin 2s linear infinite;box-shadow:0 0 15px red;margin-bottom:20px;">
@@ -337,6 +407,12 @@ header {
     // scroll animations
     const obs = new IntersectionObserver((e)=>e.forEach(i=>{ if(i.isIntersecting){ i.target.classList.add("visible"); obs.unobserve(i.target); }}), {threshold:0.1});
     document.querySelectorAll(".animated").forEach(n=>obs.observe(n));
+  </script>
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+  }
   </script>
   <div class="bubbles">
   <span style="--i:11"></span>
