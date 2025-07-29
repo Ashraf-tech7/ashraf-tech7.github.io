@@ -382,6 +382,608 @@ header {
   text-decoration: none;
   font-size: 18px;
   }
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  font-size: 26px;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+  }
+
+  </style>
+</head>
+<body>
+  <header class="navbar">
+  <div class="logo">AshTech</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <nav class="nav-links" id="navLinks">
+    <a href="about.html">🙋‍♂️ About Me</a>
+    <a href="blog1.html">📰 Blog</a>
+  </nav>
+</header>
+  <ul class="bubbles">
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+  </ul>
+  <div id="loader"><div class="spinner"></div></div>
+
+  <div class="overlay">
+    
+    <!-- Header -->
+    <header class="animated">
+      <img src="assets/logo.png" alt="AshTech Logo" style="width:160px;height:160px;border-radius:50%;animation:spin 2s linear infinite;box-shadow:0 0 15px red;margin-bottom:20px;">
+      <h1>AshTech</h1>
+      <p class="tagline">Building the future with code & creativity</p>
+      <a href="#projects" class="button btn-primary">🚀 View My Work</a>
+      <a href="javascript:void(0);" class="button btn-secondary" onclick="toggleContact(); document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth' });">📬 Contact Me</a>
+      <a href="#hire" class="button btn-primary">💼 Hire Me</a>
+    </header>
+    
+
+    <!-- Services -->
+    <section class="animated">
+      <h2 class="section-title">🛠 Services</h2>
+      <div class="card-container">
+        <div class="card"><h3>💻 Web Design</h3><p>Modern responsive websites.</p></div>
+        <div class="card"><h3>🎨 Logo & Brand Design</h3><p>Standout brand identity.</p></div>
+        <div class="card"><h3>🎶 Music & Artist Sites</h3><p>Sites for musicians like A$iB.</p></div>
+        <div class="card"><h3>📱 Social Media Branding</h3><p>Design kits for Instagram & more.</p></div>
+      </div>
+    </section>
+
+    <!-- Hire Me -->
+    <section id="hire" class="animated">
+      <h2 class="section-title">💼 Hire Me</h2>
+      <div class="pricing-box"><h3>🎨 Logo Design</h3><span>5,000 NGN</span></div>
+      <div class="pricing-box"><h3>🎶 Artist Website</h3><span>50,000 NGN</span></div>
+      <div class="pricing-box"><h3>📸 Instagram Kit</h3><span>15,000 NGN</span></div>
+      <a href="https://wa.me/2349024273902" class="button btn-primary">📲 Message on WhatsApp</a>
+    </section>
+
+    <!-- Skills -->
+    <section class="animated" id="skills">
+      <h2 class="section-title">🧠 Skills & Tools</h2>
+      <div class="card-container">
+        <div class="service"><h3>HTML & CSS</h3></div>
+        <div class="service"><h3>Canva & CapCut</h3></div>
+        <div class="service"><h3>GitHub</h3></div>
+        <div class="service"><h3>Mobile Design</h3></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="animated">
+      <h2 class="section-title">🚀 Projects</h2>
+      <div class="card-container">
+        <div class="project-card">
+  <img src="assets/show_invite.png" alt="Tribute Flyer for Prophet Muhammad ﷺ">
+  <h3>Tribute Flyer Design</h3>
+  <p>
+    A respectful and creative design crafted in honor of Prophet Muhammad (ﷺ). 
+    This project reflects spiritual devotion expressed through visual art.
+  </p>
+  <a href="assets/show_invite.png" target="_blank" class="btn">View Flyer</a>
+</div>
+        <div class="project-card"><h3>🎧 A$iB Music Website</h3><p>Artist page hosted on Marnux & GitHub.</p><a href="https://sfhozqgj.manus.space/" class="button btn-secondary">Visit Site</a></div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="animated" id="testimonials">
+      <h2 class="section-title">🌟 Testimonials</h2>
+      <div class="card-container">
+        <div class="testimonial-card" style="background-image:url('assets/asib_testimonial.jpg');">
+          <div class="testimonial-text"><h3>A$iB</h3><p>"AshTech built a dope music website for me!"</p></div>
+        </div>
+        <div class="testimonial-card" style="background-image:url('assets/branding_testimonial.png');">
+          <div class="testimonial-text"><h3>Logo Client</h3><p>"Perfect logo, simple & professional."</p></div>
+        </div>
+        <div class="testimonial-card" style="background-image:url('assets/webdesign_testimonial.png');">
+          <div class="testimonial-text"><h3>Website Client</h3><p>"Amazing website that works on any device."</p></div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <!-- Contact Button -->
+<div class="contact-toggle">
+  <button onclick="toggleContact()">Contact Me</button>
+</div>
+
+<!-- Hidden Contact Icons -->
+<div id="contact-section" class="contact-icons hidden">
+  <a href="https://wa.me/2349024273902" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="mailto:ashrafaliyu96@gmail.com" target="_blank" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://www.instagram.com/ashraf_allee?igsh=MWJpeGJ5aDEwa2Vjbw==" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://ng.linkedin.com/in/ashraf-aliyu-636778313" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function toggleContact() {
+    const section = document.getElementById("contact-section");
+    section.classList.toggle("hidden");
+  }
+</script>
+
+    
+
+  </div>
+
+  <!-- Chatbot -->
+  <script>
+    window.chatbaseConfig = { chatbotId: "1PHnQYKqimS1AoCiUqyrB" };
+  </script>
+  <script src="https://www.chatbase.co/embed.min.js" defer></script>
+  <div id="chatbot-prompt">💬 Need Help?</div>
+
+  <script>
+    // loader hide
+    window.addEventListener("load", () => document.getElementById("loader").style.display="none");
+    // scroll animations
+    const obs = new IntersectionObserver((e)=>e.forEach(i=>{ if(i.isIntersecting){ i.target.classList.add("visible"); obs.unobserve(i.target); }}), {threshold:0.1});
+    document.querySelectorAll(".animated").forEach(n=>obs.observe(n));
+  </script>
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("show");
+  }
+  </script>
+  <script>
+  function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+  }
+  </script>
+  <div class="bubbles">
+  <span style="--i:11"></span>
+  <span style="--i:12"></span>
+  <span style="--i:24"></span>
+  <span style="--i:10"></span>
+  <span style="--i:14"></span>
+  <span style="--i:23"></span>
+  <span style
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AshTech – Digital Creator</title>
+  <meta name="description" content="AshTech by Ashraf Aliyu – Creating websites, logos, digital designs.">
+  <meta name="keywords" content="AshTech, web design, Nigeria, A$iB">
+  <meta name="author" content="Ashraf Aliyu">
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  background: url('Ashtech BG.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+    /* Reset & global */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Poppins,sans-serif; }
+    body { background:#0f0f0f; color:#fff; overflow-x:hidden; }
+    a { text-decoration:none; }
+
+    /* Loader */
+    #loader { position:fixed; top:0;left:0;width:100%;height:100%;background:#000;display:flex;align-items:center;justify-content:center;z-index:99; }
+    .spinner { border:5px solid #222; border-top:5px solid #ff003c; border-radius:50%; width:50px;height:50px; animation:spin 1s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+
+    /* Bubbles */
+    .bubbles { position:fixed; top:0;left:0;width:100%;height:100%;pointer-events:none; z-index:0; }
+    .bubbles li { position:absolute; bottom:-100px; background:rgba(255,255,255,0.1); border-radius:50%; animation:rise linear infinite; }
+    .bubbles li:nth-child(1){left:10%;width:40px;height:40px;animation-duration:20s;}
+    .bubbles li:nth-child(2){left:20%;width:20px;height:20px;animation-duration:22s;}
+    .bubbles li:nth-child(3){left:30%;width:35px;height:35px;animation-duration:18s;}
+    .bubbles li:nth-child(4){left:45%;width:15px;height:15px;animation-duration:26s;}
+    .bubbles li:nth-child(5){left:60%;width:30px;height:30px;animation-duration:19s;}
+    .bubbles li:nth-child(6){left:75%;width:25px;height:25px;animation-duration:17s;}
+    .bubbles li:nth-child(7){left:85%;width:20px;height:20px;animation-duration:21s;}
+    @keyframes rise { from { transform:translateY(0); opacity:1; } to { transform:translateY(-800px); opacity:0; } }
+
+    /* Layout */
+    .overlay { position:relative; z-index:1; padding:20px; max-width:1000px; margin:auto; }
+    header, section, footer { margin-bottom:40px; text-align:center; }
+    h1 { font-size:2.5rem; color:#ff003c; text-shadow:0 0 10px red; margin-bottom:10px; }
+    p.tagline { color:#ccc; font-size:1.2rem; margin-bottom:20px; }
+    .button { display:inline-block; margin:5px; padding:10px 20px; border-radius:8px; font-size:1rem; transition:0.3s; }
+    .btn-primary { background:#ff003c; color:#fff; box-shadow:0 0 10px #ff003c; }
+    .btn-secondary { background:#111; color:#ff003c; border:1px solid #ff003c; box-shadow:0 0 5px #ff003c; }
+    .button:hover { transform:scale(1.05); }
+
+    .card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .card, .project-card, .testimonial-card { background:#1a1a1a; border:1px solid #ff003c; border-radius:12px; overflow:hidden; transition:transform .3s,box-shadow .3s; }
+    .card, .project-card { padding:20px; width:280px; box-shadow:0 0 10px rgba(255,0,60,0.3); }
+    .project-card:hover, .card:hover { transform:translateY(-5px); }
+
+    .testimonial-card { position:relative; width:280px; height:250px; background-size:cover; background-position:center; box-shadow:0 0 15px rgba(255,0,60,0.5); }
+    .testimonial-text { position:absolute; bottom:0; width:100%; background:rgba(0,0,0,0.7); padding:15px; color:#fff; text-shadow:1px 1px 3px #000; }
+
+    .animated { opacity:0; transform:translateY(20px); transition:opacity .8s ease,transform .8s ease; }
+    .animated.visible { opacity:1; transform:translateY(0); }
+
+    footer { color:#777; font-size:.9rem; border-top:1px solid #333; padding-top:20px; }
+
+    /* FAQ/Footer chatbot prompt */
+    #chatbot-prompt { position:fixed; bottom:100px;right:20px; background:#ff003c;color:#fff;padding:8px 12px;border-radius:8px;box-shadow:0 0 10px #ff003c; z-index:999; cursor: pointer; }
+
+    @media(max-width:768px){
+      h1 { font-size:2rem; }
+      .card, .project-card, .testimonial-card { width:90%; }
+    }
+  body {
+  margin: 0;
+  padding: 0;
+  background: url('assets/AshTech_BG.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+    .bubbles {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+.bubbles span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  bottom: -150px;
+  border-radius: 50%;
+  animation: rise 20s linear infinite;
+  left: calc(100vw * var(--i) / 25);
+  animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+    }
+    .project-card img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+    }
+    .social-icons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #1da1f2; /* You can adjust color */
+  transform: scale(1.2);
+  }
+.contact-toggle {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.contact-toggle button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #00ffcc;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.contact-toggle button:hover {
+  background-color: #00ccaa;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+  transition: all 0.4s ease;
+}
+
+.contact-icons a {
+  font-size: 32px;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-icons a:hover {
+  color: #00ffcc;
+  transform: scale(1.2);
+}
+
+.hidden {
+  display: none;
+      }
+
+
+  }
+    /* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1rem 2rem;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+      }
+
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+    }
+
+  .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+  }
+
+  .menu-icon {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* Responsive for mobile */
+  @media (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #222;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .nav-links.show {
+      display: flex;
+    }
+  }
+    /* Header layout */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  color: #fff;
+  padding: 15px 25px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Hamburger */
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Side Menu */
+.nav-menu {
+  position: fixed;
+  right: -250px;
+  top: 0;
+  height: 100%;
+  width: 250px;
+  background: #222;
+  padding-top: 70px;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+/* Show the menu */
+.nav-menu.active {
+  right: 0;
+}
+
+/* Menu items */
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  padding: 20px;
+  border-bottom: 1px solid #444;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-menu a:hover {
+  color: #f90;
+    } 
+    header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+  color: white;
+}
+
+/* Slide-in navigation */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  height: 100vh;
+  width: 250px;
+  background-color: #111;
+  padding-top: 60px;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu ul li {
+  margin: 20px 0;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  }
 
   </style>
 </head>
@@ -571,5 +1173,37 @@ header {
     <p style="font-size: 12px; color: #666;">&copy; 2025 AshTech. All rights reserved.</p>
   </div>
   </footer>
+
+
+="--i:18"></span>
+  <span style="--i:16"></span>
+  <span style="--i:19"></span>
+  <span style="--i:20"></span>
+</div>
+  <footer style="background-color: #111; color: #fff; padding: 40px 20px; text-align: center;">
+  <div style="max-width: 900px; margin: auto;">
+    <h2 style="margin-bottom: 10px;">AshTech</h2>
+    <p style="font-size: 14px; color: #ccc;">Innovating the future with code, design, and creativity.</p>
+
+    <div class="social-icons">
+  <a href="mailto:ashrafaliyu96@gmail.com" target="_blank" aria-label="Email">
+    <i class="fas fa-envelope"></i>
+  </a>
+  <a href="https://www.instagram.com/ashraf_allee?igsh=MWJpeGJ5aDEwa2Vjbw==" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://ng.linkedin.com/in/ashraf-aliyu-636778313" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+    </div>
+
+    <p style="font-size: 12px; color: #666;">&copy; 2025 AshTech. All rights reserved.</p>
+  </div>
+  </footer>
+  <script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('show');
+  }
+  </script>
 </body>
 </html>
