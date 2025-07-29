@@ -42,40 +42,66 @@
     .bubbles li:nth-child(6){left:75%;width:25px;height:25px;animation-duration:17s;}
     .bubbles li:nth-child(7){left:85%;width:20px;height:20px;animation-duration:21s;}
     @keyframes rise { from { transform:translateY(0); opacity:1; } to { transform:translateY(-800px); opacity:0; } }
-
-    /* Layout */
-    .overlay { position:relative; z-index:1; padding:20px; max-width:1000px; margin:auto; }
-    /* Header styling */
-header.animated {
-  text-align: center;
-  padding: 60px 20px 40px;
+    /* Header layout */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 20px;
+  box-shadow: 0 0 10px #ff003c;
   position: relative;
-  z-index: 1;
+  z-index: 1000;
 }
 
-header.animated img {
-  width: 160px;
-  height: 160px;
+/* Logo and heading */
+.logo-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-nav .logo {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   animation: spin 2s linear infinite;
-  box-shadow: 0 0 15px red;
-  margin-bottom: 20px;
+  box-shadow: 0 0 10px red;
 }
 
-header.animated h1 {
-  font-size: 2.5rem;
+/* Navigation */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
   color: #ff003c;
-  text-shadow: 0 0 10px red;
-  margin-bottom: 10px;
 }
 
-header.animated .tagline {
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.tagline {
   color: #ccc;
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
-.button {
+.hero-buttons .button {
   display: inline-block;
   margin: 5px;
   padding: 10px 20px;
@@ -103,9 +129,11 @@ header.animated .tagline {
   opacity: 0.9;
 }
 
+/* Logo spin animation */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
 }
                     
     .card-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
