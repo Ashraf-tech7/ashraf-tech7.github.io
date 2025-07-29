@@ -329,6 +329,59 @@ header {
 .nav-menu a:hover {
   color: #f90;
     } 
+    header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+  color: white;
+}
+
+/* Slide-in navigation */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  height: 100vh;
+  width: 250px;
+  background-color: #111;
+  padding-top: 60px;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu ul li {
+  margin: 20px 0;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  }
 
   </style>
 </head>
