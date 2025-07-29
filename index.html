@@ -204,18 +204,19 @@ header {
   font-weight: bold;
 }
       }
-    
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #111;
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-  }
+
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  left: 0;
+    }
 
   .logo {
     font-size: 1.5em;
@@ -275,6 +276,7 @@ header {
   <div class="overlay">
     <!-- HEADER -->
 <header>
+  <div style="height: 70px;"></div>
   <nav class="navbar">
     <div class="logo">AshTech</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
